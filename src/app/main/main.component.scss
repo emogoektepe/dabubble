@@ -1,0 +1,17 @@
+.router-outlet {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: var(--clr-bg);
+}
+
+header {
+  padding: 2.5rem;
+}
