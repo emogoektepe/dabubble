@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dabubble-3ffad": {
+      "hosting": {
+        "dabubble": [
+          "dabubble-3ffad"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dabubble-3ffad"
+  }
+}
