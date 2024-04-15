@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { CreateAccountComponent } from './main/create-account/create-account.component';
 import { AvatarComponent } from './main/avatar/avatar.component';
 import { MainComponent } from './main/main.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './main/login/login.component';
 
 export const routes: Routes = [
   {
