@@ -1,19 +1,111 @@
-section {
-  padding: 2.25rem;
-  border-radius: 30px;
+* {
   font-family: var(--font-nunito);
+}
+
+.login-section {
+  padding: var(--section-padding);
+  border-radius: var(--section-border-radius);
   background-color: var(--clr-white);
-  display: grid;
-  gap: 1.5rem;
   > h1 {
-    font-size: 2.875rem;
+    font-size: 46px;
     color: var(--clr-primary);
     text-align: center;
     margin-block: 0;
+    margin-bottom: 30px;
   }
   > p {
     max-width: 40ch;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 20px;
+    margin-bottom: 46px;
+  }
+}
+
+.input-style {
+  display: flex;
+  background-color: var(--clr-bg);
+  padding: 18px 32px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  > img {
+    filter: invert(45%) sepia(0%) saturate(1628%) hue-rotate(183deg)
+      brightness(87%) contrast(87%);
+  }
+  > input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--clr-bg);
+    font-size: 18px;
+    padding-left: 30px;
+  }
+}
+
+.input-style:hover:not(:focus-within) {
+  border: 1px solid var(--clr-grey);
+  box-sizing: border-box;
+}
+
+.input-style:focus-within {
+  border: 1px solid var(--clr-primary);
+  > img {
+    filter: none;
+  }
+  > input:focus::placeholder {
+    color: transparent;
+  }
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: var(--clr-danger);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.forgot-password {
+  color: var(--clr-primary-hover);
+  text-align: center;
+  font-size: 18px;
+  margin-top: 25px;
+  > span {
+    &:hover {
+      background-color: var(--clr-bg);
+      padding: 5px 15px;
+      border-radius: var(--section-border-radius);
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}
+
+.create-account {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: grid;
+  gap: 20px;
+  > div {
+    text-align: end;
+    color: var(--clr-primary-hover);
+    font-size: 18px;
+    transform: translateX(15px);
+    cursor: pointer;
+    span {
+      border: 1px solid transparent;
+      padding: 10px 15px;
+    }
+    &:hover {
+      > span {
+        border-radius: 30px;
+        border: 1px solid var(--clr-primary-hover);
+        color: var(--clr-primary);
+        text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+      }
+    }
   }
 }

@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {}
+export class LoginComponent {
+  @ViewChild('emailInput') emailInputRef!: ElementRef;
+  @ViewChild('passwordIpnut') passwordIpnutRef!: ElementRef;
+
+  focusEmailInput() {
+    this.emailInputRef.nativeElement.focus();
+  }
+
+  focusPasswordInput() {
+    this.passwordIpnutRef.nativeElement.focus();
+  }
+}

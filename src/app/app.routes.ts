@@ -3,6 +3,7 @@ import { CreateAccountComponent } from './main/create-account/create-account.com
 import { AvatarComponent } from './main/avatar/avatar.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './main/login/login.component';
+import { ForgotPasswordComponent } from './main/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
       {
         path: 'avatar',
         component: AvatarComponent,
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
       },
     ],
   },

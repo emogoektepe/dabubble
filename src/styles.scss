@@ -15,3 +15,49 @@ video {
   display: block;
   max-width: 100%;
 }
+
+.button-primary {
+  padding: 12px 25px;
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--clr-primary);
+  font-size: 18px;
+  font-family: var(--font-nunito);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--clr-primary-hover);
+  }
+  &:active:not(:disabled) {
+    background-color: var(--clr-primary);
+  }
+  &:disabled {
+    background-color: var(--clr-grey);
+    cursor: default;
+  }
+}
+
+.button-secondary {
+  padding: 12px 25px;
+  text-align: center;
+  color: var(--clr-primary);
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-primary-hover);
+  border-radius: 25px;
+  font-size: 18px;
+  font-family: var(--font-nunito);
+  cursor: pointer;
+  &:hover:not(:disabled) {
+    background-color: var(--clr-secondary-hover);
+    color: var(--clr-white);
+  }
+  &:active:not(:disabled) {
+    background-color: var(--clr-primary);
+  }
+  &:disabled {
+    border: 1px solid var(--clr-grey);
+    color: var(--clr-grey);
+    cursor: default;
+  }
+}
