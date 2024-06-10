@@ -3,6 +3,7 @@
 }
 
 .create-account {
+  position: relative;
   padding: var(--section-padding);
   border-radius: var(--section-border-radius);
   background-color: var(--clr-white);
@@ -19,4 +20,10 @@
     font-size: 20px;
     margin-bottom: 30px;
   }
+}
+
+.back-button {
+  position: absolute;
+  top: 55px;
+  cursor: pointer;
 }

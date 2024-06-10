@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-create-account',
@@ -8,9 +9,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrl: './create-account.component.scss',
 })
 export class CreateAccountComponent {
-  @ViewChild('passwordIpnut') nameInputRef!: ElementRef;
+  @ViewChild('nameInput') nameInputRef!: ElementRef;
   @ViewChild('mailInput') mailInputRef!: ElementRef;
   @ViewChild('passwortInput') passwortInputtRef!: ElementRef;
+
+  constructor(private location: Location) {}
 
   focusNameInput() {
     this.nameInputRef.nativeElement.focus();
@@ -20,5 +23,8 @@ export class CreateAccountComponent {
   }
   focusPasswortInput() {
     this.passwortInputtRef.nativeElement.focus();
+  }
+  goBack() {
+    this.location.back();
   }
 }
