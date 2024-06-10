@@ -61,3 +61,46 @@ video {
     cursor: default;
   }
 }
+
+.input-style {
+  display: flex;
+  background-color: var(--clr-bg);
+  padding: 18px 32px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  > img {
+    filter: invert(45%) sepia(0%) saturate(1628%) hue-rotate(183deg)
+      brightness(87%) contrast(87%);
+  }
+  > input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--clr-bg);
+    font-size: 18px;
+    padding-left: 30px;
+  }
+}
+
+.input-style:hover:not(:focus-within) {
+  border: 1px solid var(--clr-grey);
+  box-sizing: border-box;
+}
+
+.input-style:focus-within {
+  border: 1px solid var(--clr-primary);
+  > img {
+    filter: none;
+  }
+  > input:focus::placeholder {
+    color: transparent;
+  }
+}
+
+.error-message {
+  color: var(--clr-danger);
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+}

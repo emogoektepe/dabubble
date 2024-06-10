@@ -17,54 +17,8 @@
     max-width: 40ch;
     text-align: center;
     font-size: 20px;
-    margin-bottom: 46px;
+    margin-bottom: 30px;
   }
-}
-
-.input-style {
-  display: flex;
-  background-color: var(--clr-bg);
-  padding: 18px 32px;
-  border-radius: 100px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  > img {
-    filter: invert(45%) sepia(0%) saturate(1628%) hue-rotate(183deg)
-      brightness(87%) contrast(87%);
-  }
-  > input {
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: var(--clr-bg);
-    font-size: 18px;
-    padding-left: 30px;
-  }
-}
-
-.input-style:hover:not(:focus-within) {
-  border: 1px solid var(--clr-grey);
-  box-sizing: border-box;
-}
-
-.input-style:focus-within {
-  border: 1px solid var(--clr-primary);
-  > img {
-    filter: none;
-  }
-  > input:focus::placeholder {
-    color: transparent;
-  }
-}
-
-.input-section {
-  margin-bottom: 20px;
-}
-
-.error-message {
-  color: var(--clr-danger);
-  font-size: 14px;
-  margin-top: 6px;
 }
 
 .forgot-password {
@@ -83,7 +37,7 @@
   }
 }
 
-.create-account {
+.create-account-button {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -108,4 +62,58 @@
       }
     }
   }
+}
+
+.separator {
+  margin: 30px 0px;
+  font-size: 18px;
+  display: flex;
+  > p {
+    width: 100%;
+    border-bottom: 1px solid var(--clr-primary-hover);
+    margin: 5px 0;
+  }
+  > span {
+    margin: 0 20px;
+  }
+}
+
+.google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  &:hover {
+    font-weight: bold;
+  }
+  &:active {
+    border: 1px solid var(--clr-primary) !important;
+  }
+  > span {
+    all: unset;
+    color: var(--clr-primary);
+    font-size: 18px;
+    margin-left: 20px;
+  }
+  > img {
+    filter: unset;
+  }
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.impressum-data {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  color: var(--clr-primary-hover);
+  margin-top: 30px;
+  transform: translateY(20px);
 }

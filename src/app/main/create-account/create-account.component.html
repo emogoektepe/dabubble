@@ -1,1 +1,25 @@
-<p>create-account works!</p>
+<section class="create-account">
+    <h1>Konto erstellen</h1>
+    <p>Mit deinem Namen und deiner E-Mail-Adresse hast du dein neues DABubble-Konto.</p>
+    <div class="input-section">
+        <div class="input-style" (click)="focusNameInput()">
+            <img src="assets/icons/person_filled.svg" alt="">
+            <input #nameInput type="text" autocomplete="off" placeholder="Name und Nachname">
+        </div>
+        <div class="error-message">Bitte schreiben Sie einen Namen.</div>
+    </div>
+    <div class="input-section">
+        <div class="input-style" (click)="focusMailInput()">
+            <img src="assets/icons/mail.svg" alt="">
+            <input #mailInput type="email" autocomplete="off" placeholder="beispielname@email.com">
+        </div>
+        <div class="error-message">*Diese E-Mail-Adresse ist leider ungültig.</div>
+    </div>
+    <div class="input-section">
+        <div class="input-style" (click)="focusPasswortInput()">
+            <img src="assets/icons/lock.svg" alt="">
+            <input #passwortInput type="password" autocomplete="off" placeholder="Passwort">
+        </div>
+        <div class="error-message">Bitte geben sie ein Passwort ein.</div>
+    </div>
+</section>

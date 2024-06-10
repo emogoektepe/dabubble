@@ -1,0 +1,22 @@
+* {
+  font-family: var(--font-nunito);
+}
+
+.create-account {
+  padding: var(--section-padding);
+  border-radius: var(--section-border-radius);
+  background-color: var(--clr-white);
+  > h1 {
+    font-size: 46px;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-block: 0;
+    margin-bottom: 30px;
+  }
+  > p {
+    max-width: 40ch;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}

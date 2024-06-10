@@ -4,6 +4,8 @@ import { AvatarComponent } from './main/avatar/avatar.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './main/login/login.component';
 import { ForgotPasswordComponent } from './main/forgot-password/forgot-password.component';
+import { ImpressumComponent } from './main/impressum/impressum.component';
+import { DatenschutzComponent } from './main/datenschutz/datenschutz.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +27,14 @@ export const routes: Routes = [
       {
         path: 'forgot-password',
         component: ForgotPasswordComponent,
+      },
+      {
+        path: 'impressum',
+        component: ImpressumComponent,
+      },
+      {
+        path: 'datenschutz',
+        component: DatenschutzComponent,
       },
     ],
   },
