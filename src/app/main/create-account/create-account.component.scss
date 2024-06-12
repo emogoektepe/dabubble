@@ -27,3 +27,23 @@
   top: 55px;
   cursor: pointer;
 }
+
+.privacy-policy-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.privacy-policy-link {
+  color: var(--clr-primary-hover);
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.continue-button {
+  margin-top: 25px;
+  display: flex;
+  justify-content: end;
+}
