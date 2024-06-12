@@ -24,8 +24,14 @@
 
 .back-button {
   position: absolute;
-  top: 55px;
+  top: 50px;
   cursor: pointer;
+  padding: 5px;
+  border: 1px solid white;
+  &:hover {
+    border: 1px solid black;
+    border-radius: 100%;
+  }
 }
 
 .privacy-policy-check {

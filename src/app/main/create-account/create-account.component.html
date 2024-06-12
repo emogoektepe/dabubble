@@ -7,19 +7,19 @@
             <div class="input-style" (click)="focusNameInput()">
                 <img src="assets/icons/person_filled.svg" alt="">
                 <input #nameInput type="text" autocomplete="off" placeholder="Name und Nachname"
-                    formControlName="fullName">
+                    formControlName="fullName" (keydown)="handleSpace($event)">
             </div>
-            <div [ngStyle]="{'color': registerForm.get('fullName')?.hasError('required') && (registerForm.get('fullName')?.dirty ||
+            <div [ngStyle]="{'color': registerForm.get('fullName')?.invalid && (registerForm.get('fullName')?.dirty ||
             registerForm.get('fullName')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">
                 Bitte schreiben Sie einen Namen.</div>
         </div>
         <div class="input-section">
             <div class="input-style" (click)="focusMailInput()">
                 <img src="assets/icons/mail.svg" alt="">
-                <input #mailInput type="email" autocomplete="off" placeholder="beispielname@email.com"
-                    formControlName="email">
+                <input #mailInput type="text" autocomplete="off" placeholder="beispielname@email.com"
+                    formControlName="email" (keydown)="handleSpace($event)">
             </div>
-            <div [ngStyle]="{'color': registerForm.get('email')?.hasError('required') && (registerForm.get('email')?.dirty ||
+            <div [ngStyle]="{'color': registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty ||
             registerForm.get('email')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">*Diese
                 E-Mail-Adresse ist leider ungültig.</div>
         </div>
@@ -27,9 +27,9 @@
             <div class="input-style" (click)="focusPasswortInput()">
                 <img src="assets/icons/lock.svg" alt="">
                 <input #passwortInput type="password" autocomplete="off" placeholder="Passwort"
-                    formControlName="password">
+                    formControlName="password" (keydown)="handleSpace($event)">
             </div>
-            <div [ngStyle]="{'color': registerForm.get('password')?.hasError('required') && (registerForm.get('password')?.dirty ||
+            <div [ngStyle]="{'color': registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty ||
             registerForm.get('password')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">Bitte geben
                 sie ein Passwort ein.</div>
         </div>

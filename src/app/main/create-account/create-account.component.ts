@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Utils } from '../../shared/utils';
 
 @Component({
   selector: 'app-create-account',
@@ -23,39 +24,23 @@ export class CreateAccountComponent {
   @ViewChild('policyCheckbox') policyCheckbox!: ElementRef;
 
   isSubmitted = false;
+  emailPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$';
 
   registerForm = this.fb.group({
-    fullName: ['', [Validators.required, this.noLeadingWhitespaceValidator]],
-    email: [
-      '',
-      [
-        Validators.required,
-        this.noLeadingWhitespaceValidator,
-        Validators.email,
-      ],
-    ],
-    password: ['', [Validators.required, this.noLeadingWhitespaceValidator]],
+    fullName: ['', Validators.required],
+    email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+    password: ['', Validators.required],
     checkbox: ['', Validators.requiredTrue],
   });
 
   constructor(private location: Location, private fb: FormBuilder) {}
 
   onSubmit(): void {
-    console.log(
-      'submitted form',
-      this.registerForm.value,
-      this.registerForm.invalid
-    );
     this.isSubmitted = true;
   }
 
-  noLeadingWhitespaceValidator(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    if (control.value && control.value.startsWith(' ')) {
-      return { leadingWhitespace: true };
-    }
-    return null;
+  handleSpace(event: any) {
+    Utils.space(event);
   }
 
   focusNameInput() {
