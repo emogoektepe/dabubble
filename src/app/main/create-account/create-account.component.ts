@@ -1,13 +1,7 @@
 import { CommonModule, Location } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  ReactiveFormsModule,
-  ValidationErrors,
-  Validators,
-} from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { Utils } from '../../shared/utils';
 
 @Component({
@@ -33,10 +27,15 @@ export class CreateAccountComponent {
     checkbox: ['', Validators.requiredTrue],
   });
 
-  constructor(private location: Location, private fb: FormBuilder) {}
+  constructor(
+    private location: Location,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   onSubmit(): void {
     this.isSubmitted = true;
+    this.router.navigate(['/avatar']);
   }
 
   handleSpace(event: any) {

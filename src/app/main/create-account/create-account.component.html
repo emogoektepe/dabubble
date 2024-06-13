@@ -7,11 +7,12 @@
             <div class="input-style" (click)="focusNameInput()">
                 <img src="assets/icons/person_filled.svg" alt="">
                 <input #nameInput type="text" autocomplete="off" placeholder="Name und Nachname"
-                    formControlName="fullName" (keydown)="handleSpace($event)">
+                    formControlName="fullName" (keydown)="handleSpace($event)" maxlength="15" minlength="5"
+                    pattern="\s*(\S\s*){5,}">
             </div>
             <div [ngStyle]="{'color': registerForm.get('fullName')?.invalid && (registerForm.get('fullName')?.dirty ||
             registerForm.get('fullName')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">
-                Bitte schreiben Sie einen Namen.</div>
+                Bitte schreiben Sie einen Namen. (min 5 Zeichen)</div>
         </div>
         <div class="input-section">
             <div class="input-style" (click)="focusMailInput()">
@@ -27,11 +28,12 @@
             <div class="input-style" (click)="focusPasswortInput()">
                 <img src="assets/icons/lock.svg" alt="">
                 <input #passwortInput type="password" autocomplete="off" placeholder="Passwort"
-                    formControlName="password" (keydown)="handleSpace($event)">
+                    formControlName="password" (keydown)="handleSpace($event)" maxlength="15" minlength="5"
+                    pattern="\s*(\S\s*){5,}">
             </div>
             <div [ngStyle]="{'color': registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty ||
             registerForm.get('password')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">Bitte geben
-                sie ein Passwort ein.</div>
+                sie ein Passwort ein. (ohne Leerzeichen & min 5 Zeichen)</div>
         </div>
         <div class="privacy-policy-check">
             <input #policyCheckbox type="checkbox" style="width: 15px; height: 15px;" formControlName="checkbox">
@@ -39,8 +41,8 @@
                 zu.</span>
         </div>
         <div class="continue-button">
-            <button [disabled]="registerForm.invalid || !registerForm.value.checkbox"
-                class="button-primary">Weiter</button>
+            <!-- <button [disabled]="registerForm.invalid || !registerForm.value.checkbox" -->
+            <button class="button-primary">Weiter</button>
         </div>
     </form>
 </section>
