@@ -1,0 +1,32 @@
+* {
+  font-family: var(--font-nunito);
+}
+
+.avatar-section {
+  padding: var(--section-padding);
+  border-radius: var(--section-border-radius);
+  background-color: var(--clr-white);
+  > h1 {
+    font-size: 46px;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-block: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.avatar-name {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+  > h3 {
+    font-size: 32px;
+  }
+}
+
+.continue-button {
+  margin-top: 25px;
+  display: flex;
+  justify-content: end;
+}
