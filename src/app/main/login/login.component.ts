@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TransferDataService } from '../../firebase/transferData.service';
 
 @Component({
   selector: 'app-login',

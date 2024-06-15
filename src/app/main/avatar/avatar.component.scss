@@ -3,9 +3,10 @@
 }
 
 .avatar-section {
-  padding: var(--section-padding);
+  padding: var(--section-padding) 60px;
   border-radius: var(--section-border-radius);
   background-color: var(--clr-white);
+  position: relative;
   > h1 {
     font-size: 46px;
     color: var(--clr-primary);
@@ -29,4 +30,48 @@
   margin-top: 25px;
   display: flex;
   justify-content: end;
+}
+
+.avatar-picker {
+  margin: 40px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.avatar-images {
+  display: flex;
+  justify-content: space-between;
+  > img {
+    border-radius: 100%;
+    width: 60px;
+  }
+}
+
+.back-button {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid white;
+  &:hover {
+    border: 1px solid black;
+    border-radius: 100%;
+  }
+}
+
+.avatar-image {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.error-back {
+  color: var(--clr-primary);
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

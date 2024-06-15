@@ -1,10 +1,32 @@
 <section class="avatar-section">
+    @if(createdName) {
+    <img (click)="goBack()" class="back-button" src="assets/icons/arrow_back.svg" alt="">
     <h1>Wähle deinen Avatar</h1>
     <div class="avatar-name">
+        @if(pickedImage != 0) {
+        <img style="width: 169px; border-radius: 100%;" src="assets/images/profile-image/{{pickedImage}}.png" alt="">
+        }
+        @else {
         <img src="assets/images/profile-image/profile.svg" alt="">
-        <h3>Emre Göktepe</h3>
+        }
+        <h3>{{createdName}}</h3>
+    </div>
+    <div class="avatar-picker">
+        <h4>Aus der Liste wählen</h4>
+        <div class="avatar-images">
+            @for(imageIndex of imagesIndex; track imageIndex) {
+            <img class="avatar-image" (click)="chooseImageAsAvatar(imageIndex)"
+                src="assets/images/profile-image/{{imageIndex}}.png" alt="">
+            }
+        </div>
     </div>
     <div class="continue-button">
-        <button class="button-primary">Weiter</button>
+        <button [disabled]="pickedImage == 0" class="button-primary" routerLink="/">Weiter</button>
     </div>
+    }
+    @else {
+    <h1 style="color: red;">Etwas ist schief gelaufen. :(</h1>
+    <h3>Bitte kehren Sie <span class="error-back" (click)="goBack()">zurück</span> und registrieren Sie sich erneut.
+    </h3>
+    }
 </section>

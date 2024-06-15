@@ -3,6 +3,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Utils } from '../../shared/utils';
+import { TransferDataService } from '../../firebase/transferData.service';
 
 @Component({
   selector: 'app-create-account',
@@ -30,12 +31,19 @@ export class CreateAccountComponent {
   constructor(
     private location: Location,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private tD: TransferDataService
   ) {}
 
   onSubmit(): void {
     this.isSubmitted = true;
     this.router.navigate(['/avatar']);
+  }
+
+  ngOnDestroy() {
+    this.tD.user.fullName = this.registerForm.value.fullName ?? '';
+    this.tD.user.email = this.registerForm.value.email ?? '';
+    this.tD.user.password = this.registerForm.value.password ?? '';
   }
 
   handleSpace(event: any) {
