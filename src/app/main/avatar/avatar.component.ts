@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { TransferDataService } from '../../firebase/transferData.service';
 import { RouterLink } from '@angular/router';
+import { User } from '../../../models/user.class';
 
 @Component({
   selector: 'app-avatar',
@@ -11,9 +12,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './avatar.component.scss',
 })
 export class AvatarComponent {
-  imagesIndex = [1, 2, 3, 4, 5, 6];
-  pickedImage = 0;
-  createdName = '';
+  imagesIndex: number[] = [1, 2, 3, 4, 5, 6];
+  pickedImage: number = 0;
+  createdName: string = '';
 
   constructor(private location: Location, private tD: TransferDataService) {}
 
@@ -23,7 +24,7 @@ export class AvatarComponent {
 
   ngOnDestroy() {
     this.tD.user.imageIndex = this.pickedImage;
-    console.log(this.tD.user);
+    this.tD.user = new User();
   }
 
   goBack() {

@@ -35,15 +35,15 @@ export class CreateAccountComponent {
     private tD: TransferDataService
   ) {}
 
-  onSubmit(): void {
-    this.isSubmitted = true;
-    this.router.navigate(['/avatar']);
-  }
-
   ngOnDestroy() {
     this.tD.user.fullName = this.registerForm.value.fullName ?? '';
     this.tD.user.email = this.registerForm.value.email ?? '';
     this.tD.user.password = this.registerForm.value.password ?? '';
+  }
+
+  onSubmit(): void {
+    this.isSubmitted = true;
+    this.router.navigate(['/avatar']);
   }
 
   handleSpace(event: any) {
