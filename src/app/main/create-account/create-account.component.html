@@ -6,7 +6,7 @@
         <div class="input-section">
             <div class="input-style" (click)="focusNameInput()">
                 <img src="assets/icons/person_filled.svg" alt="">
-                <input #nameInput type="text" autocomplete="off" placeholder="Name und Nachname"
+                <input id="fullName" #nameInput type="text" autocomplete="off" placeholder="Name und Nachname"
                     formControlName="fullName" (keydown)="handleSpace($event)" maxlength="15" minlength="5"
                     pattern="\s*(\S\s*){5,}">
             </div>
@@ -17,17 +17,22 @@
         <div class="input-section">
             <div class="input-style" (click)="focusMailInput()">
                 <img src="assets/icons/mail.svg" alt="">
-                <input #mailInput type="text" autocomplete="off" placeholder="beispielname@email.com"
+                <input id="email" #mailInput type="text" autocomplete="off" placeholder="beispielname@email.com"
                     formControlName="email" (keydown)="handleSpace($event)">
             </div>
+            @if(emailIsTaken) {
+            <div style="color: red;" class="error-message">*Diese
+                E-Mail-Adresse ist leider vergeben.</div>
+            } @else {
             <div [ngStyle]="{'color': registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty ||
-            registerForm.get('email')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">*Diese
+                registerForm.get('email')?.touched || isSubmitted) ? 'red' : 'white'}" class="error-message">*Diese
                 E-Mail-Adresse ist leider ungültig.</div>
+            }
         </div>
         <div class="input-section">
-            <div class="input-style" (click)="focusPasswortInput()">
+            <div class="input-style" (click)="focusPasswordInput()">
                 <img src="assets/icons/lock.svg" alt="">
-                <input #passwortInput type="password" autocomplete="off" placeholder="Passwort"
+                <input id="password" #passwordInput type="password" autocomplete="off" placeholder="Passwort"
                     formControlName="password" (keydown)="handleSpace($event)" maxlength="15" minlength="5"
                     pattern="\s*(\S\s*){5,}">
             </div>

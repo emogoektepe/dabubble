@@ -1,7 +1,7 @@
 export class User {
   fullName: string;
   email: string;
-  password: string;
+  password?: string;
   imageIndex: number;
 
   constructor(obj?: any) {

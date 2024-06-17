@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TransferDataService } from '../../firebase/transferData.service';
 import { RouterLink } from '@angular/router';
 import { User } from '../../../models/user.class';
+import { CreateUserService } from '../../firebase/createUser.service';
 
 @Component({
   selector: 'app-avatar',
@@ -16,7 +17,11 @@ export class AvatarComponent {
   pickedImage: number = 0;
   createdName: string = '';
 
-  constructor(private location: Location, private tD: TransferDataService) {}
+  constructor(
+    private location: Location,
+    private tD: TransferDataService,
+    private cU: CreateUserService
+  ) {}
 
   ngOnInit() {
     this.createdName = this.tD.user.fullName;
@@ -24,6 +29,7 @@ export class AvatarComponent {
 
   ngOnDestroy() {
     this.tD.user.imageIndex = this.pickedImage;
+    this.cU.addUser(this.tD.user);
     this.tD.user = new User();
   }
 
